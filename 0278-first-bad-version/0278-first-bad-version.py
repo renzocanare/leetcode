@@ -7,14 +7,16 @@ class Solution:
         high = n
         mid = 0
         
-        if n == 1:
-            # If there is only one version, return that version.
+        if n == 1 or isBadVersion(1):
+            # If there is only one version or the first version is bad, return the first version.
             return 1
             
         while (low <= high):
             mid = int((low + high) / 2)
             
             if isBadVersion(mid) and not isBadVersion(mid - 1):
+                # If mid is bad and the version before it is not, that is the start
+                # of the bad versions. Return mid.
                 return mid
             elif isBadVersion(mid):
                 # If mid is a bad, then it must be on the left. 
@@ -22,9 +24,6 @@ class Solution:
             else:
                 # If not, then the it must be on the right.
                 low = mid + 1
-            
-            if isBadVersion(mid) and mid == 1:
-                return 1
             
         return mid
     
