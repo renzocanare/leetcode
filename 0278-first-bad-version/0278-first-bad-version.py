@@ -5,7 +5,6 @@ class Solution:
     def firstBadVersion(self, n: int) -> int:
         low = 1
         high = n
-        mid = 0
         
         if n == 1 or isBadVersion(1):
             # If there is only one version or the first version is bad, return the first version.
