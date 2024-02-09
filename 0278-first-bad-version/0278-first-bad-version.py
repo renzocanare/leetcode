@@ -23,8 +23,8 @@ class Solution:
                 # If not, then the it must be on the right.
                 low = mid + 1
             
-#             if isBadVersion(mid) and mid == 1:
-#                 return 1
+            if isBadVersion(mid) and mid == 1:
+                return 1
             
         return mid
     
