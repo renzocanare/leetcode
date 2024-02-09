@@ -23,14 +23,8 @@ class Solution:
                 # If not, then the it must be on the right.
                 low = mid + 1
             
-            if isBadVersion(mid) and mid == 1:
-                return 1
-
-            print(f'----------------')            
-            print(f'low: {low}')
-            print(f'mid: {mid}')
-            print(f'high: {high}')
-            print(f'----------------')
+#             if isBadVersion(mid) and mid == 1:
+#                 return 1
             
         return mid
     
