@@ -1,6 +1,4 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-
+import java.util.Stack;
 
 class Solution {
     
@@ -13,7 +11,7 @@ class Solution {
     
     public boolean isValid(String s) {
         // Initialize a stack.
-        Deque<Character> stack = new ArrayDeque<>();
+        Stack<Character> stack = new Stack<>();
         
         // Return false for uneven length strings.
         if ((s.length() % 2 != 0)) {
@@ -23,9 +21,9 @@ class Solution {
         for (int i = 0; i < s.length(); i++) {
             // Get first character.
             char currChar = s.charAt(i);
-            System.out.println(currChar);
+
             if ( currChar == ')' || currChar == '}' || currChar == ']') {
-                if (stack.isEmpty() || !isMatching(stack.peekLast(), currChar)){
+                if (stack.isEmpty() || !isMatching(stack.peek(), currChar)){
                     // If stack is empty or is not a matching pair, return false.
                     return false;
                 } else {
