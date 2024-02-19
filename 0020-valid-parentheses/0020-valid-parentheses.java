@@ -15,8 +15,8 @@ class Solution {
         // Initialize a stack.
         Deque<Character> stack = new ArrayDeque<>();
         
-        // Return false for single char strings.
-        if ((s.length() == 1)) {
+        // Return false for uneven length strings.
+        if ((s.length() % 2 != 0)) {
             return false;
         } 
             
